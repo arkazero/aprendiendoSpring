@@ -5,7 +5,6 @@
 	
 	<bean id="mundo" class="com.arkazero.beans.Mundo">
 		<property name="saludo" value="Hola Mundo"></property>
-	
 	</bean>
 
 </beans>
