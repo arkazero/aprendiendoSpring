@@ -3,8 +3,13 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 	
-	<bean id="mundo" class="com.arkazero.beans.Mundo">
+	<!-- <bean id="mundo" class="com.arkazero.beans.Mundo">
 		<property name="saludo" value="Hola Mundo"></property>
+	</bean> -->
+	<bean id="persona" class="com.arkazero.beans.Persona">
+		<constructor-arg value="1"></constructor-arg>
+		<constructor-arg value="Juan"></constructor-arg>
+		<constructor-arg value="arkazero"></constructor-arg>
 	</bean>
 
 </beans>

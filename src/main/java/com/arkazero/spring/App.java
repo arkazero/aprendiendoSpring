@@ -8,15 +8,16 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import com.arkazero.beans.AppConfig;
 import com.arkazero.beans.AppConfig2;
 import com.arkazero.beans.Mundo;
+import com.arkazero.beans.Persona;
 
 public class App {
 
 	public static void main(String[] args) {
 		//cargo el beans.xml
-		//ApplicationContext appContext = new ClassPathXmlApplicationContext("com/arkazero/xml/beans.xml");
+		ApplicationContext appContext = new ClassPathXmlApplicationContext("com/arkazero/xml/beans.xml");
 		
 		//Clase java donde se define el bean
-		ApplicationContext appContext = new AnnotationConfigApplicationContext(AppConfig.class, AppConfig2.class);
+		//ApplicationContext appContext = new AnnotationConfigApplicationContext(AppConfig.class, AppConfig2.class);
 		//otra manera para registrar los beans seria
 		/**
 		 * ApplicationContext appContext = new AnnotationConfigApplicationContext();
@@ -30,11 +31,11 @@ public class App {
 		
 		//Hago referencia a la propiedad del beans
 		//Mundo m = (Mundo) appContext.getBean("mundo");
-		Mundo m = (Mundo) appContext.getBean("marte");
+		Persona per = (Persona) appContext.getBean(Persona.class);
 		
 		
 		//Accedo al get del bean, e imprimo el valor cargo dentro del beans.xml
-		System.out.println(m.getSaludo());
+		System.out.println(per.getId() + " " + per.getNombre());
 		//cerrar el contexto
 		((ConfigurableApplicationContext)appContext).close();
 	}
