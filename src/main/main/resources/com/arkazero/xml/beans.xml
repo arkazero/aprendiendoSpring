@@ -7,9 +7,14 @@
 		<property name="saludo" value="Hola Mundo"></property>
 	</bean> -->
 	<bean id="persona" class="com.arkazero.beans.Persona">
-		<constructor-arg value="1"></constructor-arg>
-		<constructor-arg value="Juan"></constructor-arg>
-		<constructor-arg value="arkazero"></constructor-arg>
+		<property name="pais" ref="pais"></property>
+		<property name="id" value="1"></property>
+		<property name="nombre" value="Juan"></property>
+		<property name="apodo" value="arkazero"></property>		
+	</bean>
+	
+	<bean id="pais" class="com.arkazero.beans.Pais">
+		<property name="nombre" value="Colombia"></property>
 	</bean>
 
 </beans>

@@ -35,7 +35,7 @@ public class App {
 		
 		
 		//Accedo al get del bean, e imprimo el valor cargo dentro del beans.xml
-		System.out.println(per.getId() + " " + per.getNombre());
+		System.out.println(per.getId() + " " + per.getNombre() + " "+per.getPais().getNombre());
 		//cerrar el contexto
 		((ConfigurableApplicationContext)appContext).close();
 	}
