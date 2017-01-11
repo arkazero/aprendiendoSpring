@@ -1,23 +1,13 @@
 package com.arkazero.beans;
 
-public class Pais {
+public class Ciudad {
 	private String nombre;
-	private Ciudad ciudad;
-	
+
 	public String getNombre() {
 		return nombre;
-	}
-
-	public Ciudad getCiudad() {
-		return ciudad;
-	}
-
-	public void setCiudad(Ciudad ciudad) {
-		this.ciudad = ciudad;
 	}
 
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-	
 }

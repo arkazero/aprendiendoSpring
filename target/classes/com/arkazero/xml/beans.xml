@@ -10,7 +10,7 @@
 		<property name="pais" ref="pais"></property>
 		
 		<!-- Otra forma de anidar bean sin necesidad de referenciar 
-		<property name=pais>
+		<property name=pais>	
 			<bean id="pais" class="com.arkazero.beans.Pais">
 				<property name="nombre" value="Colombia"></property>
 			</bean>
@@ -23,6 +23,13 @@
 	
 	<bean id="pais" class="com.arkazero.beans.Pais">
 		<property name="nombre" value="Colombia"></property>
+		<property name="ciudad">
+			<bean id="ciudad" class="com.arkazero.beans.Ciudad">
+				<property name="nombre" value="Bogota D.C"></property>
+			</bean>
+		</property>
 	</bean>
+	
+
 
 </beans>
