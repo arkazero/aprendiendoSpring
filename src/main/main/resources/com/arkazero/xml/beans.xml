@@ -6,9 +6,7 @@
 	<!-- <bean id="mundo" class="com.arkazero.beans.Mundo">
 		<property name="saludo" value="Hola Mundo"></property>
 	</bean> -->
-	<bean id="persona" class="com.arkazero.beans.Persona">
-		<property name="pais" ref="pais"></property>
-		
+	<bean id="persona" class="com.arkazero.beans.Persona" autowire="byName">	
 		<!-- Otra forma de anidar bean sin necesidad de referenciar 
 		<property name=pais>	
 			<bean id="pais" class="com.arkazero.beans.Pais">
@@ -18,24 +16,24 @@
 		 -->
 		<property name="id" value="1"></property>
 		<property name="nombre" value="Juan"></property>
-		<property name="apodo" value="arkazero"></property>		
+		<property name="apodo" value="arkazero"></property>
 	</bean>
 	
 	<bean id="pais" class="com.arkazero.beans.Pais">
 		<property name="nombre" value="Colombia"></property>
-		<property name="ciudad">
+		<!-- <property name="ciudad">
 			<list>
 				<ref bean="ciudad"/>
 				<ref bean="ciudad2"/>
 				<ref bean="ciudad3"/>
-			</list>
-		</property>
+			</list> 
+		</property>-->
 	</bean>
 	
 	<bean id="ciudad" class="com.arkazero.beans.Ciudad">
 		<property name="nombre" value="Bogota D.C"></property>
 	</bean>
-	
+	<!-- 
 	<bean id="ciudad2" class="com.arkazero.beans.Ciudad">
 		<property name="nombre" value="Cali"></property>
 	</bean>
@@ -43,7 +41,7 @@
 	<bean id="ciudad3" class="com.arkazero.beans.Ciudad">
 		<property name="nombre" value="Medellin"></property>
 	</bean>
-			
+			-->
 			
 
 

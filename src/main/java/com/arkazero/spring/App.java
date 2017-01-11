@@ -36,13 +36,13 @@ public class App {
 		
 		
 		//Accedo al get del bean, e imprimo el valor cargo dentro del beans.xml
-		
+		/*
 		String listaCiudades = "";
 		for (Ciudad ciu : per.getPais().getCiudad()) {
 			listaCiudades += ciu.getNombre() + " - ";
 		}
-		
-		System.out.println(per.getId() + " " + per.getNombre() + " "+per.getPais().getNombre() + "-- "+listaCiudades);
+		*/
+		System.out.println(per.getId() + " " + per.getNombre() + " "+per.getPais().getNombre() + "-- "+per.getCiudad().getNombre());
 		//cerrar el contexto
 		((ConfigurableApplicationContext)appContext).close();
 	}
