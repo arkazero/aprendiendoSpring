@@ -7,6 +7,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.arkazero.beans.AppConfig;
 import com.arkazero.beans.AppConfig2;
+import com.arkazero.beans.Ciudad;
 import com.arkazero.beans.Mundo;
 import com.arkazero.beans.Persona;
 
@@ -35,7 +36,13 @@ public class App {
 		
 		
 		//Accedo al get del bean, e imprimo el valor cargo dentro del beans.xml
-		System.out.println(per.getId() + " " + per.getNombre() + " "+per.getPais().getNombre() + "-- "+per.getPais().getCiudad().getNombre());
+		
+		String listaCiudades = "";
+		for (Ciudad ciu : per.getPais().getCiudad()) {
+			listaCiudades += ciu.getNombre() + " - ";
+		}
+		
+		System.out.println(per.getId() + " " + per.getNombre() + " "+per.getPais().getNombre() + "-- "+listaCiudades);
 		//cerrar el contexto
 		((ConfigurableApplicationContext)appContext).close();
 	}
