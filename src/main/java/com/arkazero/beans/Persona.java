@@ -7,10 +7,22 @@ public class Persona {
 	private Pais pais;
 	private Ciudad ciudad;
 	
+	/*
+	 * Otra manera de ejecutar que un metodo se ejcute al momento de iniciar o finalizar podemos utilizar, es importante
+	 * que se aliminen en el bean.xml las propiedades init-method="init" destroy-method="destroy" y marcar que bean sera 
+	 * el reponsable de manejo de las anotaciones
+	 * <bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor"></bean>
+	 * 
+	 * @PostConstruct
+	 */
 	private void init(){
 		System.out.println("Metodod llamado al iniciar el bean, el nombre del metodo puede ser cualquiera");
 	}
 	
+	/*
+	 * Otra manera de ejecutar que un metodo se ejcute al momento de iniciar o finalizar podemos utilizar
+	 * @PreDestroy
+	 */
 	private void destroy(){
 		System.out.println("Metodod llamado al cerrar o destruir el bean, el nombre del metodo puede ser cualquiera");
 	}
