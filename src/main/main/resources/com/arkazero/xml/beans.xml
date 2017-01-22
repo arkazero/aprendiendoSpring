@@ -8,10 +8,10 @@
 	> -->
 	
 	
-	<!-- <bean id="mundo" class="com.arkazero.beans.Mundo">
+	<!-- <bean id="mundo" class="com.arkazero.beans.Mundo" init-method="init" destroy-method="destroy">
 		<property name="saludo" value="Hola Mundo"></property>
 	</bean> -->
-	<bean id="persona" class="com.arkazero.beans.Persona" autowire="byName" init-method="init" destroy-method="destroy">	
+	<bean id="persona" class="com.arkazero.beans.Persona" autowire="byName">	
 		<!-- Otra forma de anidar bean sin necesidad de referenciar 
 		<property name=pais>	
 			<bean id="pais" class="com.arkazero.beans.Pais">

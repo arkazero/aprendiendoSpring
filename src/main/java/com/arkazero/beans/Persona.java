@@ -1,6 +1,9 @@
 package com.arkazero.beans;
 
-public class Persona {
+import org.springframework.beans.factory.DisposableBean;
+import org.springframework.beans.factory.InitializingBean;
+
+public class Persona implements InitializingBean, DisposableBean{
 	private int id;
 	private String nombre;
 	private String apodo;
@@ -15,17 +18,19 @@ public class Persona {
 	 * 
 	 * @PostConstruct
 	 */
+	/*
 	private void init(){
 		System.out.println("Metodod llamado al iniciar el bean, el nombre del metodo puede ser cualquiera");
 	}
-	
+	*/
 	/*
 	 * Otra manera de ejecutar que un metodo se ejcute al momento de iniciar o finalizar podemos utilizar
 	 * @PreDestroy
 	 */
+	/*
 	private void destroy(){
 		System.out.println("Metodod llamado al cerrar o destruir el bean, el nombre del metodo puede ser cualquiera");
-	}
+	}*/
 
 	public Ciudad getCiudad() {
 		return ciudad;
@@ -65,6 +70,17 @@ public class Persona {
 
 	public void setApodo(String apodo) {
 		this.apodo = apodo;
+	}
+
+	//Es el metodo que se ejecuta antes de inicializar el bean, esta forma se usa cuando usamos iterfaces
+	public void afterPropertiesSet() throws Exception {
+		// TODO Auto-generated method stub
+		System.out.println("Metodod llamado al iniciar el bean, el nombre del metodo puede ser cualquiera");
+	}
+
+	public void destroy() throws Exception {
+		// TODO Auto-generated method stub
+		System.out.println("Metodod llamado al cerrar o destruir el bean, el nombre del metodo puede ser cualquiera");
 	}
 
 }
