@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd" >
+	<!-- xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd" 
+	default-init-method="init" Esto es si necesita llevar un registro o control o algo que necesitemos al iniciar cada bean
+	default-destroy-method="destroy"
+	> -->
 	
 	<!-- <bean id="mundo" class="com.arkazero.beans.Mundo">
 		<property name="saludo" value="Hola Mundo"></property>
 	</bean> -->
-	<bean id="persona" class="com.arkazero.beans.Persona" autowire="byName">	
+	<bean id="persona" class="com.arkazero.beans.Persona" autowire="byName" init-method="init" destroy-method="destroy">	
 		<!-- Otra forma de anidar bean sin necesidad de referenciar 
 		<property name=pais>	
 			<bean id="pais" class="com.arkazero.beans.Pais">

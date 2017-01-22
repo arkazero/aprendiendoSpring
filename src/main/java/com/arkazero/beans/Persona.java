@@ -6,6 +6,14 @@ public class Persona {
 	private String apodo;
 	private Pais pais;
 	private Ciudad ciudad;
+	
+	private void init(){
+		System.out.println("Metodod llamado al iniciar el bean, el nombre del metodo puede ser cualquiera");
+	}
+	
+	private void destroy(){
+		System.out.println("Metodod llamado al cerrar o destruir el bean, el nombre del metodo puede ser cualquiera");
+	}
 
 	public Ciudad getCiudad() {
 		return ciudad;
