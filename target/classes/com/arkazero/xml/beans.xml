@@ -3,19 +3,17 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans 
 	http://www.springframework.org/schema/beans/spring-beans.xsd" >
-		
-
-	<bean class="com.arkazero.beans.exampleBeanPostProcessor"></bean> 
 	
-	<bean id="persona" class="com.arkazero.beans.Persona" autowire="byName">
-		<property name="apodo" value="arkazero"></property>
-	</bean>
-
-	<bean id="pais" class="com.arkazero.beans.Pais">
-		<property name="nombre" value="Colombia"></property>
-	</bean>
+	<bean class="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor"></bean>
 	
-	<bean id="ciudad" class="com.arkazero.beans.Ciudad">
-		<property name="nombre" value="Bogota"></property>
-	</bean>
+	<bean id="messi" class="com.arkazero.beans.Jugador">
+		<property name="numero" value="10"></property>
+		<property name="nombre" value="Lionel Messi"></property>
+		<property name="equipo" ref="barcelona"></property>		
+	</bean>		
+	
+	
+	<bean id="juventus" class="com.arkazero.beans.Juventus"></bean>
+
+	<bean id="barcelona" class="com.arkazero.beans.Barcelona"></bean>
 </beans>
