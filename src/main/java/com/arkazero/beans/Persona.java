@@ -73,14 +73,13 @@ public class Persona implements InitializingBean, DisposableBean{
 	}
 
 	//Es el metodo que se ejecuta antes de inicializar el bean, esta forma se usa cuando usamos iterfaces
+	
+	
 	public void afterPropertiesSet() throws Exception {
-		// TODO Auto-generated method stub
 		System.out.println("Metodod llamado al iniciar el bean, el nombre del metodo puede ser cualquiera");
 	}
 
 	public void destroy() throws Exception {
-		// TODO Auto-generated method stub
 		System.out.println("Metodod llamado al cerrar o destruir el bean, el nombre del metodo puede ser cualquiera");
 	}
-
 }

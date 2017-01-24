@@ -33,7 +33,10 @@ public class App {
 		//Hago referencia a la propiedad del beans
 		//Mundo m = (Mundo) appContext.getBean("mundo");
 		Persona per = (Persona) appContext.getBean(Persona.class);
+		Ciudad ciud = (Ciudad) appContext.getBean(Ciudad.class);
 		
+		System.out.println(per.getApodo());
+		//System.out.println(ciud.getNombre());
 		
 		//Accedo al get del bean, e imprimo el valor cargo dentro del beans.xml
 		/*
@@ -42,7 +45,7 @@ public class App {
 			listaCiudades += ciu.getNombre() + " - ";
 		}
 		*/
-		System.out.println(per.getId() + " " + per.getNombre() + " "+per.getPais().getNombre() + "-- "+per.getCiudad().getNombre());
+		//System.out.println(per.getId() + " " + per.getNombre() + " "+per.getPais().getNombre() + "-- "+per.getCiudad().getNombre());
 		//cerrar el contexto
 		((ConfigurableApplicationContext)appContext).close();
 	}

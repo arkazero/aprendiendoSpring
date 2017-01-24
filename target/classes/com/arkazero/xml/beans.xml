@@ -1,53 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd" >
-	<!-- xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd" 
-	default-init-method="init" Esto es si necesita llevar un registro o control o algo que necesitemos al iniciar cada bean
-	default-destroy-method="destroy"
-	> -->
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd" >
+		
+
+	<bean class="com.arkazero.beans.exampleBeanPostProcessor"></bean> 
 	
-	
-	<!-- <bean id="mundo" class="com.arkazero.beans.Mundo" init-method="init" destroy-method="destroy">
-		<property name="saludo" value="Hola Mundo"></property>
-	</bean> -->
-	<bean id="persona" class="com.arkazero.beans.Persona" autowire="byName">	
-		<!-- Otra forma de anidar bean sin necesidad de referenciar 
-		<property name=pais>	
-			<bean id="pais" class="com.arkazero.beans.Pais">
-				<property name="nombre" value="Colombia"></property>
-			</bean>
-		</property>
-		 -->
-		<property name="id" value="1"></property>
-		<property name="nombre" value="Juan"></property>
+	<bean id="persona" class="com.arkazero.beans.Persona" autowire="byName">
 		<property name="apodo" value="arkazero"></property>
 	</bean>
-	
+
 	<bean id="pais" class="com.arkazero.beans.Pais">
 		<property name="nombre" value="Colombia"></property>
-		<!-- <property name="ciudad">
-			<list>
-				<ref bean="ciudad"/>
-				<ref bean="ciudad2"/>
-				<ref bean="ciudad3"/>
-			</list> 
-		</property>-->
 	</bean>
 	
 	<bean id="ciudad" class="com.arkazero.beans.Ciudad">
-		<property name="nombre" value="Bogota D.C"></property>
+		<property name="nombre" value="Bogota"></property>
 	</bean>
-	<!-- 
-	<bean id="ciudad2" class="com.arkazero.beans.Ciudad">
-		<property name="nombre" value="Cali"></property>
-	</bean>
-	
-	<bean id="ciudad3" class="com.arkazero.beans.Ciudad">
-		<property name="nombre" value="Medellin"></property>
-	</bean>
-			-->
-			
-
-
 </beans>
