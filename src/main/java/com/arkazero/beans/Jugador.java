@@ -1,5 +1,7 @@
 package com.arkazero.beans;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Required;
 
 import com.arkazero.interfaces.IEquipo;
@@ -27,7 +29,10 @@ public class Jugador {
 	}
 	
 	//Accion que hace que la propiedad sea definida - Es propia de Spring
-	@Required
+	//@Required
+	
+	@Autowired
+	@Qualifier("barcelonaQualifier")
 	public void setEquipo(IEquipo equipo) {
 		this.equipo = equipo;
 	}
